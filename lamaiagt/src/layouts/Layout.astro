@@ -1,7 +1,6 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import MessageBar from "../components/MessageBar.jsx";
-import Carrousel from "../components/Carrousel.jsx";
 
 interface Props {
   title: string;
@@ -23,7 +22,6 @@ const { title } = Astro.props;
   <body>
     <Navbar />
     <MessageBar client:load/>
-	<Carrousel client:load/>
     <slot />
   </body>
 </html>
