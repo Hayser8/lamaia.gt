@@ -1,6 +1,5 @@
 ---
-import Navbar from "../components/Navbar.astro";
-import MessageBar from "../components/MessageBar.jsx";
+import Header from "../components/Header.astro";
 
 interface Props {
   title: string;
@@ -18,10 +17,18 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .background-image {
+        background-image: url('/bgwaves.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    </style>
   </head>
-  <body>
-    <Navbar />
-    <MessageBar client:load/>
+  <body class="antialiased relative background-image">
+    <Header />
     <slot />
   </body>
 </html>
